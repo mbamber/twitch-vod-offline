@@ -6,10 +6,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var (
-	After string
-)
-
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List the VODs for the given users.",
