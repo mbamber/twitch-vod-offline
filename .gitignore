@@ -1,2 +1,5 @@
 .vscode
 target/
+
+# Terraform
+**.terraform/

@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.12
+  build:
+    commands:
+      - mkdir -p app/target
+      - zip app/target/source.zip app/src/*
+
+artifacts:
+  files:
+    - app/target/source.zip
+  name: source.zip

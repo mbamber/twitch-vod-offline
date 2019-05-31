@@ -1,6 +1,9 @@
 package twitch
 
 import (
+	"encoding/json"
+	"fmt"
+
 	"github.com/xfxdev/xlog"
 )
 
@@ -29,6 +32,13 @@ func ListTwitchVODs(channelNames []string) (err error) {
 	}
 
 	xlog.Infof("Got %d vods", len(vods))
+
+	// Print the VODs
+	out, err := json.MarshalIndent(vods, "", "  ")
+	if err != nil {
+		return err
+	}
+	fmt.Println(string(out))
 
 	return nil
 }
