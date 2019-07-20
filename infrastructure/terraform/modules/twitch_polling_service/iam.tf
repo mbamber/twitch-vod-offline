@@ -1,10 +1,10 @@
 data "aws_caller_identity" "current" {}
 
 resource "aws_iam_role" "lambda_execution_role" {
-    name = format("%s_lambda_execution_role", local.service_underscores)
-    description = format("Role used by lambda for execution of the %s service", var.service_name)
+  name        = format("%s_lambda_execution_role", local.service_underscores)
+  description = format("Role used by lambda for execution of the %s service", var.service_name)
 
-    assume_role_policy = <<EOF
+  assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -47,7 +47,7 @@ EOF
 }
 
 resource "aws_iam_role" "codebuild_role" {
-    name = format("%s_codebuild_role", local.service_underscores)
+    name        = format("%s_codebuild_role", local.service_underscores)
     description = format("Role used by codebuild for building the %s service", var.service_name)
 
     assume_role_policy = <<EOF

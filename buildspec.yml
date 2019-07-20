@@ -6,10 +6,12 @@ phases:
       golang: 1.12
   build:
     commands:
-      - mkdir -p app/target
-      - zip app/target/source.zip app/src/*
+      - make build
+  post_build:
+    commands:
+      - make package-only
 
 artifacts:
   files:
-    - app/target/source.zip
+    - app/source.zip
   name: source.zip

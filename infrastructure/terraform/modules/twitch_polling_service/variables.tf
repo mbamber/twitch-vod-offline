@@ -5,11 +5,11 @@ variable "service_name" {
 
 variable "lambda_entrypoint" {
   type        = "string"
-  description = "The entrypoint into the lambda function. (Default: lambdaHandler)"
-  default     = "lambdaHandler"
+  description = "The entrypoint into the lambda function. (Default: polling)"
+  default     = "polling"
 }
 
 locals {
-    service_underscores = replace(var.service_name, "-", "_")
-    service_hyphens = replace(var.service_name, "_", "-")
+  service_underscores = replace(var.service_name, "-", "_")
+  service_hyphens     = replace(var.service_name, "_", "-")
 }
